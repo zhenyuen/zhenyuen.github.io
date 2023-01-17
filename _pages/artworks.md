@@ -2,7 +2,7 @@
 layout: page
 title: artworks
 permalink: /artworks/
-description: My collection of artworks draw in a variety of traditional mediums, e.g., graphite, charcoal, and water colour.
+description: My collection of artworks drawn in a variety of traditional mediums, e.g., graphite, charcoal, and water colour.
 nav: true
 nav_order: 4
 display_categories:

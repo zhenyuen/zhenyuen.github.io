@@ -50,7 +50,7 @@ Ideally, I would love to dedicate my time to my blog and website. However, I am 
 ***
 ## Equations
 
-One of my all-time favorite formulas - the Taylor's Expansion. From approximating asymptotic behaviour of unbounded systems to [Quake's fast inverse square root algorithm](https://betterexplained.com/articles/understanding-quakes-fast-inverse-square-root/), you can't deny its significance in simplifying computations for most practical applications.
+One of my all-time favorite formula - the Taylor's Expansion. From approximating asymptotic behaviour of unbounded systems to [Quake's fast inverse square root algorithm](https://betterexplained.com/articles/understanding-quakes-fast-inverse-square-root/), you can't deny its significance in simplifying computations for most practical applications.
 
 $$
 f(x)=\sum_{k=0}^\infty f^{(k)}(a)\frac{(x-a)^k}{k!}

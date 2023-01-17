@@ -46,7 +46,7 @@
             - Performed preliminary refactoring of the GPU DDK codebase to properly expose public headers and fix build targets/dependencies.
   
     - title: HKU CS Research Internship Programme
-      institution: California Institute of Technology, Pasadena, California, US
+      institution: University of Hong Kong, Hong Kong
       year: 2021
       description:
         - Built an AI chatbot in Typescript to simulate patients for the medical faculty of HKU under the supervision of Dr Tsz Hon Yuen.
