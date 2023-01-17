@@ -1,80 +1,72 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
+title: MNIST Digit Recognition with CNN
+description: Recognizing handwritten digits from MNIST dataset using a CNN in Tensorflow 2.
+img: assets/img/4_project/1.jpg
 importance: 3
-category: fun
+category: personal
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+**June 2020**
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+My first project on Convolution Neural Networks (CNN) with Tensorflow 2.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+The MNIST dataset consist of handwritten digits of 28x28 pixels.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+---
+- 32 feature maps, with a stride of 1x1
+- 2 convolutional layers and 2 max-pooling layers
+- 1 dropout layer to account for overfitting
+- Evaluted using mean squared error
+- Optimized using Stochastic Gradient Descent
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
+---
+```python
+# Building the network
+convnet = Sequential()
+# 32 feature maps (equal to the no. of neurons)
+convnet.add(Conv2D(32, (4, 4), activation='relu', input_shape=(28,28,1)))
+print("Layer 1:", convnet.output_shape)
+convnet.add(MaxPooling2D(pool_size=(2,2)))
+print("Layer 2:", convnet.output_shape)
+# Keras automatically adjusts input shape to match the output shape of previous layer
+convnet.add(Conv2D(32, (3, 3), activation='relu'))
+print("Layer 3:", convnet.output_shape)
+convnet.add(MaxPooling2D(pool_size=(2,2)))
+print("Layer 4:", convnet.output_shape)
+convnet.add(Dropout(0.3))
+convnet.add(Flatten())
+print("Layer 5:", convnet.output_shape)
+convnet.add(Dense(10, activation='softmax'))
 
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
+# Compile network
+convnet.compile(loss='mean_squared_error', optimizer='sgd', metrics=['accuracy'])
 ```
-{% endraw %}
+
+1.  Conv2D: 4x4 receptive field, 32 feature maps, ReLU.
+    - Output is 32, 25(=28-4+1)x25 pixel images, each with distinct features.
+    - No. parameters = 32 * (4 * 4 * 1 + 1) =  544
+    - Output dim = (None, 25, 25, 32)
+2.  Max-pooling: 2x2 pool size, padding uncertained (ASSUMED TO BE VALID).
+    - Seperates the image into 2x2 pixels and taking the pixel with maximum value.
+    - Default stride equal to pool size.
+    - Since padding == "valid", no padding, output is 32, 12x12 images.
+    - If padding == "same", padding present, output is 32, 13x13 images.
+    - Output dim = (None, 12, 12, 32)
+3.  Conv2D: 3x3 receptive field, 32 feature maps, ReLU.
+    - Output is 32, 10(=12-3+1)x10 pixel images.
+    - No. parameters = 32 * (3 * 3 * 32 + 1) =  9248
+    - Output dim = (None, 10, 10, 32)
+    
+4.  Max-pooling: 2x2 pool size, padding uncertained (ASSUMED TO BE VALID).
+    - Seperates the image into 2x2 pixels and taking the pixel with maximum value.
+    - Default stride equal to pool size.
+    - Output is 32, 5x5 images.
+    - Output dim = (None, 5, 5, 32)
+5.  Flatten (None, 5, 5, 32) into (None, 800), a 800-dimensional vector
+6.  Dense layer: 10 neurons, Softmax.
+    - No. parameters = 800 * 10 = 8000
+
+---
+#### Results
+- 94.61% accuracy after 20 epochs, batch size of 32 out of 60000 samples.

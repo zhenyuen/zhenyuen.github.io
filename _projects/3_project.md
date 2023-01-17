@@ -1,81 +1,62 @@
 ---
 layout: page
-title: project 3
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: Integrated Design Project
+description: Software drivers for sensor integration with Arduino microcontroller.
+img: assets/img/3_project/1.jpg
 importance: 3
-category: work
+category: university
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+**Nov-Dec 2021**
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+As the software-lead for my team, I was responsible for writing software drivers for writing external libraries for individual sensors and sub-systems.
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm mt-4 mt-md-0">
+        {% include figure.html path="assets/img/3_project/2.jpg" title="CAD design" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm mt-4 mt-md-0">
+        {% include figure.html path="assets/img/3_project/1.jpg" title="final prototype" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+        On the left, initial CAD design. Right, the realized prototype.
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/3_project/3.jpg" title="system layout" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    Block diagram / system layout.
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
+
+The overall system is composed of multiple sub-systems that interact together to execute a sequence of tasks to fulfil the given mission. Each sub-system is responsible for handling a unique set of components.
+
+The drive and navigation sub-system consist of line sensors, the accelerometer, and the DC motors. Aside from controlling the motion of the robot (moving forwards/backwards, steering and rotating), this sub-system uses an accelerometer to identify the position of the robot, which are classified into 4 states – normal ground, ascending or descending the ramp and on the ramp (elevated ground). This allows the robot to not only be aware of its location – the starting half or the collection half of the map, but also allows for a line following algorithm with dynamic steering capabilities (smaller turning radius on level ground, but a larger turning radius when climbing the ramp in exchange for increased torque).
+
+The dummy detection and identification sub-system consist of the IR receiver, the ultrasound sensor, and two phototransistors, which are hooded and unhooded respectively. The unhooded phototransistor picks up IR signals emitted by the dummies in a larger radius, providing an approximate direction of the dummy relative to the robot. The hooded phototransistor has a much smaller detection radius and is used in conjunction with the IR receiver to precisely align the robot to the dummy and identify the dummy. With the ultrasound sensor, the robot can stop within 5 cm of the dummy as required.
+
+The dummy collection sub-system consists of two servos, one for opening or closing the claw, and another for raising or lowering the claw. The LED indicator sub-system consists of the red, green, and amber LEDs.
 
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/3_project/4.jpeg" title="code structure" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    Code structure & algorithms.
 </div>
 
+For modularity, a custom library is defined for each component (except for line sensors due to latency considerations and the LEDs for simplicity), with their implementation being masked from the main program. The main program is written in a non-blocking manner, such that the tasks are executed continuously in the loop function, allowing for the accelerometer to operate in the background. The tasks are executed in sequence from the top to bottom as shown in the figure above. However, blocking functions and code segments are used for more complex manoeuvres which require the use of delays.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/3_project/5.jpg" title="execution flow" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-```
-{% endraw %}
+<div class="caption">
+    Execution flow.
+</div>

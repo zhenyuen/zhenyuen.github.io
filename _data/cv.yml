@@ -1,97 +1,94 @@
-- title: General Information
+- title: General
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Zhen Yuen Chong
     - name: Date of Birth
-      value: 14th March 1879
+      value: 16th October 1999
     - name: Languages
-      value: English, German
+      value: English, Mandarin, Malay
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Bachelor of Arts (Hons), Master of Engineering (Hons)
+      institution: University of Cambridge, Cambridge, UK
+      year: 2021 - current
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - Major in Information and Computer Engineering.
+    - title: Bachelor of Engineering (Hons)
+      institution: University of Hong Kong, Hong Kong
+      year: 2019 - current
+      description:
+        - Major in Computer Engineering
+        - Minor in Finance
+        - First Class Honours, Cumulative GPA of 3.93
+        - title: Awards
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+            - HKU Foundation Entrance Scholarship
+            - EE72 HKU Chan Kam Yin Scholarship
+            - HKU Engineering Dean’s Honours List (2020, 2021)
+            - HKU Teaching Development and Language Enhancement Grant (TDLEG) 2022.
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: ARM Ltd Part Time Undergraduate Programme
+      institution: ARM Ltd
+      year: 2022 - current
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - GPU Build systems and DevOps Software Engineer
+        - title: Responsibilities
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
+            - Developed proprietary scripts to automate the migration of repositories between multiple GitLab instances rather than relying on premium GitLab migration services.
+            - Spun out commonly used Python and NPM packages to the local GitLab registry to be made available upstream.
+            - Learnt semantic versioning, hermetic test environments with Docker in CI/CD pipelines, dependency management in Python with Poetry, and the Bazel build system.
+            - Performed preliminary refactoring of the GPU DDK codebase to properly expose public headers and fix build targets/dependencies.
+  
+    - title: HKU CS Research Internship Programme
       institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+      year: 2021
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+        - Built an AI chatbot in Typescript to simulate patients for the medical faculty of HKU under the supervision of Dr Tsz Hon Yuen.
+        - Developed methods for mapping unique replies to different descriptions of 100+ medical symptoms.
+        - Implemented the required NLP functionalities with Dialogflow API and Mongo Atlas as the primary database.
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2017
       items: 
-        - Nobel Prize in Physics 
-        - Matteucci Medal
-    - year: 2029
+        - Harvard Prize Book Award
+    - year: 2016
       items: 
-        - Max Planck Medal
+        - National Literature Camp, 1st Runner Up
+    - year: 2014, 2015
+      items: 
+        - National Robotics Competition, 1st Runner Up
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
-      items: 
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+    - title: Machine learning
       items:
-        - Description 1.
-        - Description 2.
+        - <a href="http://teaching.eng.cam.ac.uk/content/engineering-tripos-part-iia-3f8-inference-2022-23">3F8, Inference
+        - <a href="http://teaching.eng.cam.ac.uk/content/engineering-tripos-part-iia-3m1-mathematical-methods-2022-23">3M1, Mathematical methods
+    - title: Embedded systems
+      items:
+        - <a href="http://teaching.eng.cam.ac.uk/syllabus/part-iia/3f1:-signals-&-systems">3F1, Signals and systems
+        - <a href="http://teaching.eng.cam.ac.uk/syllabus/part-iia/3f2:-systems-&-control">3F2, Systems and control
+        - <a href="http://teaching.eng.cam.ac.uk/syllabus/part-iia/3f3:-statistical-signal-processing">3F3, Statistical signal processing
+        - <a href="http://teaching.eng.cam.ac.uk/syllabus/part-iia/3b1:-radio-frequency-electronics">3B1, Radio frequency electronics
+        - <a href="http://teaching.eng.cam.ac.uk/syllabus/part-iia/3b2:-integrated-digital-electronics">3B2, Integrated digital electronics
+        - <a href="http://teaching.eng.cam.ac.uk/syllabus/part-iia/3b5:-semiconductor-engineering">3B5, Semiconductor engineering
+    - title: Information theory
+      items:
+        - <a href="http://teaching.eng.cam.ac.uk/syllabus/part-iia/3f7:-information-theory-and-coding">3F7, Information theory and coding
+    - title: Quantitative finance
+      items:
+        - <a href="http://teaching.eng.cam.ac.uk/syllabus/part-iia/3e3:-modelling-risk">3E3, Modelling risk
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - Music, fine arts.

@@ -1,12 +1,8 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - zhenyuen
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - zhenyuen/engg1340_game
+  - zhenyuen/IDP
+  - zhenyuen/cnn-research
+  - zhenyuen/pi-cv-face-recognition
