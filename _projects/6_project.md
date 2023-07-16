@@ -9,4 +9,4 @@ category: university
 
 **June 2023**
 
-Check out my multi-series [blog] ({% post_url 2023-07-16-riscv-processor %}) for more details!
+Check out my multi-series [blog]({{ site.baseurl }}{% post_url 2023-07-16-riscv-processor %}) for more details!
