@@ -16,6 +16,8 @@
       year: 2021 - current
       description:
         - Major in Information and Computer Engineering.
+        - Rank 36/277, top 13th percentile in cohort.
+        - Cambridge Engineering Tripos Part IIA Project Award, RISC-V Processor GB3
     - title: Bachelor of Engineering (Hons)
       institution: University of Hong Kong, Hong Kong
       year: 2019 - current
@@ -33,9 +35,18 @@
 - title: Experience
   type: time_table
   contents:
+    - title: Visa Software Engineering Internship
+      institution: Visa Inc.
+      year: 2023 - current
+      description:
+        - Open VisaNet Tools Team
+        - title: Responsibilities
+          contents:
+            - Built and deployed a scalable Python microservice to serve a Large Language Model (Llama 2) equipped internal developer documentation as its knowledge base.
+            - Uses PostgreSQL as its primary database, and Chroma DB to store the model embeddings.
     - title: ARM Ltd Part Time Undergraduate Programme
       institution: ARM Ltd
-      year: 2022 - current
+      year: 2022 - 2023
       description:
         - GPU Build systems and DevOps Software Engineer
         - title: Responsibilities
