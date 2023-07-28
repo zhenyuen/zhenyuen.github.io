@@ -21,6 +21,6 @@ Hi there. I am Zhen Yuen, an incoming final year undergraduate majoring in compu
 
 Currently, I am employed at [Visa](https://www.visa.co.uk) as an software engineering intern in the Open VisaNet (OVN) Tools team, where I am responsible for building various tools to assist our developers at OVN. One example is a self-hosted, scalable LLM chatbot service equipped with internal developer documentations as its primary knowledge base. Previously, I was an part-time undergraduate at [ARM Ltd](https://www.arm.com) under the GPU Build Systems and DevOps division. 
 
-My academic interests includes machine learning and quantitative finance. There is still plenty of work to be done with my website, so stay tuned :)
+My academic interests includes computer hardware, low-level software and optimization, machine learning and quantitative finance. There is still plenty of work to be done with my website, so stay tuned :)
 
 ---
