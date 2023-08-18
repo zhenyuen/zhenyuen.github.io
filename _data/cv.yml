@@ -44,6 +44,7 @@
           contents:
             - Built and deployed a scalable Python microservice to serve a Large Language Model (Llama 2) equipped internal developer documentation as its knowledge base.
             - Uses PostgreSQL as its primary database, and Chroma DB to store the model embeddings.
+            - Wrote a concurrent workspace retrieval and parser command-line tool with Go.
     - title: ARM Ltd Part Time Undergraduate Programme
       institution: ARM Ltd
       year: 2022 - 2023
