@@ -42,9 +42,9 @@
         - Open VisaNet Tools Team
         - title: Responsibilities
           contents:
-            - Built and deployed a scalable Python microservice to serve a Large Language Model (Llama 2) equipped internal developer documentation as its knowledge base.
-            - Uses PostgreSQL as its primary database, and Chroma DB to store the model embeddings.
-            - Wrote a concurrent workspace retrieval and parser command-line tool with Go.
+            - Gained hands-on experience with Visa’s distributed payments processing platform and its micro-service architecture.
+            - Built a locally hosted Large Language Model (LLM) service using Llama v2 with LangChain and the Fast API framework to provide question answering services over Visa’s developer documentations to a team of 150 developers.
+            - Developed CLI tools to retrieve/parse workspaces concurrently and dynamically generate service configuration files at runtime.
     - title: ARM Ltd Part Time Undergraduate Programme
       institution: ARM Ltd
       year: 2022 - 2023
@@ -52,11 +52,10 @@
         - GPU Build systems and DevOps Software Engineer
         - title: Responsibilities
           contents:
-            - Developed proprietary scripts to automate the migration of repositories between multiple GitLab instances rather than relying on premium GitLab migration services.
-            - Spun out commonly used Python and NPM packages to the local GitLab registry to be made available upstream.
-            - Learnt semantic versioning, hermetic test environments with Docker in CI/CD pipelines, dependency management in Python with Poetry, and the Bazel build system.
-            - Performed preliminary refactoring of the GPU DDK codebase to properly expose public headers and fix build targets/dependencies.
-  
+            - Performed preliminary refactoring of the GPU Driver Development Kit codebase in C/C++ to support remote build execution.
+            - Setup hermetic build systems, test environments and CI/CD pipelines.
+            - Wrote proprietary bash and Python scripts to automate the migration of repositories between GitLab instances across 10+ teams in the GPU division.
+            - Spun out commonly used Python and NPM packages to the local GitLab registry to be made available upstream.  
     - title: HKU CS Research Internship Programme
       institution: University of Hong Kong, Hong Kong
       year: 2021
